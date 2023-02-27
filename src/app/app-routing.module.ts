@@ -32,6 +32,8 @@ import { PagesFaqComponent } from './pages/pages-faq/pages-faq.component';
 import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/pages-register/pages-register.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
+import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages-forgotpassword.component';
+import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -65,6 +67,8 @@ const routes: Routes = [
   { path: 'pages-error404', component: PagesError404Component },
   { path: 'pages-faq', component: PagesFaqComponent },
   { path: 'pages-login', component: PagesLoginComponent },
+  { path: 'pages-forgotpassword', component: PagesForgotpasswordComponent },
+  { path: 'pages-resetpassword', component: PagesResetpasswordComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
 ];

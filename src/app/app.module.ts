@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,8 @@ import { PagesRegisterComponent } from './pages/pages-register/pages-register.co
 import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
+import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages-forgotpassword.component';
+import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -76,10 +79,14 @@ import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
     PagesRegisterComponent,
     PagesLoginComponent,
     PagesError404Component,
-    PagesBlankComponent
+    PagesBlankComponent,
+    PagesForgotpasswordComponent,
+    PagesResetpasswordComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'qats_Application';
+  title = 'qats_application';
   constructor(private elementRef: ElementRef,  public  _router: Router) { }
 
   ngOnInit() {
