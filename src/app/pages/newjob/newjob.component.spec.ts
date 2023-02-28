@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PagesBlankComponent } from './pages-blank.component';
+import { NewjobComponent } from './newjob.component';
 
-describe('PagesBlankComponent', () => {
-  let component: PagesBlankComponent;
-  let fixture: ComponentFixture<PagesBlankComponent>;
+describe('NewjobComponent', () => {
+  let component: NewjobComponent;
+  let fixture: ComponentFixture<NewjobComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PagesBlankComponent ]
+      declarations: [ NewjobComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PagesBlankComponent);
+    fixture = TestBed.createComponent(NewjobComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

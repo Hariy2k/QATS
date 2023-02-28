@@ -29,9 +29,10 @@ export class PagesResetpasswordComponent {
   }
 
   onSubmit(){
-    this.user.email = this.resetForm.value.email
     if (this.resetForm.valid) {
-      this.cognitoService.forgotPassword(this.user).then(()=>{
+      this.user.code = this.resetForm.value.passcode
+      this.user.password = this.resetForm.value.password
+      this.cognitoService.resetPassword(this.user).then(()=>{
         alert('Password reset successful')
         this.router.navigate(['/pages-login']);
       }).catch(()=>{

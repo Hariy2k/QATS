@@ -1,14 +1,19 @@
 <main id="main" class="main">
-    <div class="pagetitle">
-       <h1>Blank Page</h1>
-       <nav>
-          <ol class="breadcrumb">
-             <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-             <li class="breadcrumb-item">Pages</li>
-             <li class="breadcrumb-item active">Blank</li>
-          </ol>
-       </nav>
-    </div>
+   <div class="pagetitle" style="display: flex;justify-content: space-between;align-items: baseline;">
+      <div>
+         <h1>Jobs</h1>
+         <nav>
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+               <li class="breadcrumb-item">Pages</li>
+               <li class="breadcrumb-item active">Jobs</li>
+            </ol>
+         </nav>
+      </div>
+      <div>
+         <button type="button" class="btn btn-primary rounded-pill" (click)="gotoCreateJob()"> Create Job</button>
+      </div>
+   </div>
     <section class="section">
        <div class="row">
           <div class="col-lg-6">

@@ -38,9 +38,11 @@ import { PagesContactComponent } from './pages/pages-contact/pages-contact.compo
 import { PagesRegisterComponent } from './pages/pages-register/pages-register.component';
 import { PagesLoginComponent } from './pages/pages-login/pages-login.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
-import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
+import { PagesJobsComponent } from './pages/pages-jobs/pages-jobs.component';
 import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages-forgotpassword.component';
 import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
+import { NewjobComponent } from './pages/newjob/newjob.component';
+import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
 
 @NgModule({
   declarations: [
@@ -79,9 +81,11 @@ import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-r
     PagesRegisterComponent,
     PagesLoginComponent,
     PagesError404Component,
-    PagesBlankComponent,
+    PagesJobsComponent,
     PagesForgotpasswordComponent,
-    PagesResetpasswordComponent
+    PagesResetpasswordComponent,
+    NewjobComponent,
+    PagesUsersComponent
   ],
   imports: [
     BrowserModule,

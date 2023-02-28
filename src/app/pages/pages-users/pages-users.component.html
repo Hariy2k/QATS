@@ -1,0 +1,150 @@
+<main id="main" class="main">
+    <div class="pagetitle" style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div>
+            <h1>Users</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                    <li class="breadcrumb-item">users</li>
+                </ol>
+            </nav>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
+                data-bs-target="#verticalycentered">Create User</button>
+            <div class="modal fade" id="verticalycentered" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form [formGroup]="newUserForm" (ngSubmit)="submit()">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Create New User</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <div>
+                                                <label for="inputName5" class="form-label">Full Name <span
+                                                        class="mandatory-fields">*</span>
+                                                    <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
+                                                        class="form-error-msg">&nbsp;&nbsp;Required</span>
+                                                </label>
+                                                <!-- <div *ngIf="f.fullname.errors?.['required'] && f.fullname.touched" class="invalid-feedback">
+                                                <div *ngIf="f.fullname.errors">Required</div>
+                                            </div> -->
+                                                <input type="text" class="form-control" id="inputName5" name="fullname"
+                                                    formControlName="fullname"
+                                                    [ngClass]="{ 'is-invalid':  f.fullname.errors && f.fullname.touched}">
+
+
+                                                <!-- <div *ngIf="f.fullname.errors?.['required'] && f.fullname.touched" class="invalid-feedback">
+                                                <div *ngIf="f.fullname.errors">Required</div>
+                                            </div> -->
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="inputName5" class="form-label">Email <span
+                                                    class="mandatory-fields">*</span>
+                                                <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                                    class="form-error-msg">&nbsp;&nbsp;Required</span>
+
+                                            </label>
+                                            <input type="text" class="form-control" id="inputName5" name="email"
+                                                formControlName="email"
+                                                [ngClass]="{ 'is-invalid':  f.email.errors && f.email.touched}">
+                                            <!-- <div *ngIf="f.email.errors?.['required'] && f.email.touched" class="newjobalertError alert-danger">
+                                                Email Required.
+                                            </div> -->
+                                            <!-- <div *ngIf="f.email.errors?.['required'] && f.email.touched" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors">Required</div>
+                                            </div> -->
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="inputName5" class="form-label">Position <span
+                                                    class="mandatory-fields">*</span>
+                                                <span *ngIf="f.position.errors?.['required'] && f.position.touched"
+                                                    class="form-error-msg">&nbsp;&nbsp;Required</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="inputName5" name="position"
+                                                formControlName="position"
+                                                [ngClass]="{ 'is-invalid':  f.position.errors && f.position.touched}">
+                                            <!-- <div *ngIf="f.position.errors?.['required'] && f.position.touched" class="newjobalertError alert-danger">
+                                                    Position Required.
+                                                </div> -->
+                                            <!-- <div *ngIf="f.position.errors?.['required'] && f.position.touched" class="invalid-feedback">
+                                                    <div *ngIf="f.position.errors">Required</div>
+                                                </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary"
+                                    [disabled]="newUserForm.invalid">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Start Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Brandon Jacob</td>
+                            <td>Designer</td>
+                            <td>28</td>
+                            <td>2016-05-25</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Bridie Kessler</td>
+                            <td>Developer</td>
+                            <td>35</td>
+                            <td>2014-12-05</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Ashleigh Langosh</td>
+                            <td>Finance</td>
+                            <td>45</td>
+                            <td>2011-08-12</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Angus Grady</td>
+                            <td>HR</td>
+                            <td>34</td>
+                            <td>2012-06-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Raheem Lehner</td>
+                            <td>Dynamic Division Officer</td>
+                            <td>47</td>
+                            <td>2011-04-19</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>

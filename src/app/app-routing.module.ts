@@ -25,7 +25,7 @@ import { TablesDataComponent } from './components/tables-data/tables-data.compon
 import { TablesGeneralComponent } from './components/tables-general/tables-general.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TooltipsComponent } from './components/tooltips/tooltips.component';
-import { PagesBlankComponent } from './pages/pages-blank/pages-blank.component';
+import { PagesJobsComponent } from './pages/pages-jobs/pages-jobs.component';
 import { PagesContactComponent } from './pages/pages-contact/pages-contact.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { PagesFaqComponent } from './pages/pages-faq/pages-faq.component';
@@ -34,6 +34,8 @@ import { PagesRegisterComponent } from './pages/pages-register/pages-register.co
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages-forgotpassword.component';
 import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
+import { NewjobComponent } from './pages/newjob/newjob.component';
+import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -62,7 +64,7 @@ const routes: Routes = [
   { path: 'tables-general', component: TablesGeneralComponent },
   { path: 'tabs', component: TabsComponent },
   { path: 'tooltips', component: TooltipsComponent },
-  { path: 'pages-blank', component: PagesBlankComponent },
+  { path: 'pages-jobs', component: PagesJobsComponent },
   { path: 'pages-contact', component: PagesContactComponent },
   { path: 'pages-error404', component: PagesError404Component },
   { path: 'pages-faq', component: PagesFaqComponent },
@@ -71,6 +73,8 @@ const routes: Routes = [
   { path: 'pages-resetpassword', component: PagesResetpasswordComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
+  { path: 'create-job', component: NewjobComponent },
+  { path: 'pages-users', component: PagesUsersComponent }
 ];
 
 @NgModule({
