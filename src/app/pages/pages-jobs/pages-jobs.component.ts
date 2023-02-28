@@ -13,6 +13,6 @@ export class PagesJobsComponent implements OnInit {
   ngOnInit(): void {
   }
   gotoCreateJob(){
-    this.router.navigate(['create-job'])
+    this.router.navigate(['new-job'])
   }
 }

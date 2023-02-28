@@ -73,7 +73,7 @@ const routes: Routes = [
   { path: 'pages-resetpassword', component: PagesResetpasswordComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
-  { path: 'create-job', component: NewjobComponent },
+  { path: 'new-job', component: NewjobComponent },
   { path: 'pages-users', component: PagesUsersComponent }
 ];
 
