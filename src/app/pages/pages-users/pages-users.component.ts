@@ -16,7 +16,8 @@ export class PagesUsersComponent implements OnInit{
   newUserForm =  new FormGroup({
     fullname:new FormControl('',[Validators.required]),
     email:new FormControl('',[Validators.required]),
-    position:new FormControl('',[Validators.required])
+    position:new FormControl('',[Validators.required]),
+    employeeid:new FormControl('',[Validators.required])
   })
   
 

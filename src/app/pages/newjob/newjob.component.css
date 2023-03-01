@@ -5,3 +5,12 @@
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }
+
+.form-error-msg {
+    font-size: .850rem;
+    color: #dc3545;
+}
+
+.mandatory-fields{
+    color: red;
+}

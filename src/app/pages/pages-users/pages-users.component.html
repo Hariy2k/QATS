@@ -24,9 +24,18 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="row g-3">
+                                        <div>
+                                            <label for="inputName5" class="form-label">Employee ID <span
+                                                    class="mandatory-fields">*</span>
+                                                <span *ngIf="f.employeeid.errors?.['required'] && f.employeeid.touched"
+                                                    class="form-error-msg">&nbsp;&nbsp;Required</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="inputName5" name="employeeid"
+                                                formControlName="employeeid" [ngClass]="{ 'is-invalid':  f.employeeid.errors && f.employeeid.touched}">
+                                        </div>
                                         <div class="col-md-12">
                                             <div>
-                                                <label for="inputName5" class="form-label">Full Name <span
+                                                <label for="inputName5" class="form-label">Name <span
                                                         class="mandatory-fields">*</span>
                                                     <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
                                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
@@ -83,8 +92,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary"
+                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary rounded-pill"
                                     [disabled]="newUserForm.invalid">Save</button>
                             </div>
                         </form>
@@ -95,40 +104,72 @@
     </div>
     <section class="section">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="    padding: 10px;">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <!-- <th scope="col">#</th> -->
                             <th scope="col">Name</th>
-                            <th scope="col">Position</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Start Date</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Designation</th>
+                            <!-- <th scope="col">Start Date</th> -->
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Brandon Jacob</td>
-                            <td>Designer</td>
-                            <td>28</td>
-                            <td>2016-05-25</td>
+                            <!-- <th scope="row">1</th> -->
+                            <td scope="row">Brandon Jacob</td>
+                            <td>HR</td>
+                            <td>HR</td>
+                            <!-- <td>2016-05-25</td> -->
+                            <td class="edit-del-button">
+                                <div>
+                                    <i class="ri-edit-2-fill icon-size" data-bs-toggle="modal"
+                                    data-bs-target="#verticalycentered1"></i>
+                                    &nbsp;&nbsp;
+                                </div>
+                                <div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <i class="ri-delete-bin-5-fill icon-size"></i>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Bridie Kessler</td>
+                            <!-- <th scope="row">2</th> -->
+                            <td scop="row">Bridie Kessler</td>
                             <td>Developer</td>
-                            <td>35</td>
-                            <td>2014-12-05</td>
+                            <td>SE</td>
+                            <!-- <td>2014-12-05</td> -->
+                            <td class="edit-del-button">
+                                <div>
+                                    <i class="ri-edit-2-fill icon-size"></i>
+                                    &nbsp;&nbsp;
+                                </div>
+                                <div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <i class="ri-delete-bin-5-fill icon-size"></i>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>Ashleigh Langosh</td>
+                            <!-- <th scope="row">3</th> -->
+                            <td scope="row">Ashleigh Langosh</td>
                             <td>Finance</td>
-                            <td>45</td>
-                            <td>2011-08-12</td>
+                            <td>Accounts</td>
+                            <!-- <td>2011-08-12</td> -->
+                            <td class="edit-del-button">
+                                <div>
+                                    <i class="ri-edit-2-fill icon-size"></i>
+                                    &nbsp;&nbsp;
+                                </div>
+                                <div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <i class="ri-delete-bin-5-fill icon-size"></i>
+                                </div>
+                            </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">4</th>
                             <td>Angus Grady</td>
                             <td>HR</td>
@@ -141,10 +182,74 @@
                             <td>Dynamic Division Officer</td>
                             <td>47</td>
                             <td>2011-04-19</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 </main>
+
+
+<!-- Model Popupbutton for Edit  -->
+<div class="modal fade" id="verticalycentered1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="inputName5" class="form-label">Employee ID <span
+                                            class="mandatory-fields">*</span>
+                                        <!-- <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                    </label>
+                                    <input type="text" class="form-control" id="inputName5" name="fullname"
+                                        formControlName="employeeid">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="inputName5" class="form-label">Name <span
+                                            class="mandatory-fields">*</span>
+                                        <!-- <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                    </label>
+                                    <input type="text" class="form-control" id="inputName5" name="fullname"
+                                        formControlName="fullname">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputName5" class="form-label">Department <span class="mandatory-fields">*</span>
+                                    <!-- <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                        class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                </label>
+                                <input type="text" class="form-control" id="inputName5" name="email"
+                                    formControlName="email">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputName5" class="form-label">Designation <span
+                                        class="mandatory-fields">*</span>
+                                    <!-- <span *ngIf="f.position.errors?.['required'] && f.position.touched"
+                                        class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                </label>
+                                <input type="text" class="form-control" id="inputName5" name="position"
+                                    formControlName="position">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

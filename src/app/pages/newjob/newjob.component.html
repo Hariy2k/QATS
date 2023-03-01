@@ -14,7 +14,7 @@
             <div class="card-body">
 
         <form [formGroup]="jobForm" (ngSubmit)="submit()" class="row g-3" style="margin:10px;">
-            <div class="col-md-4"> 
+            <!-- <div class="col-md-4"> 
                 <label for="inputName5" class="form-label">Requisition_ID</label> 
                 <input type="text" class="form-control" id="inputName5" name="requisition_id" formControlName="requisition_id">
                 <div *ngIf="f['requisition_id'].touched && f['requisition_id'].invalid" class="alert alert-danger" class="col-md-4 alert alert-danger form-control">
@@ -22,28 +22,34 @@
                     <div *ngIf="f['requisition_id'].errors && f['requisition_id'].errors['minlength']">ID should be 6 character.</div>
                     <div *ngIf="f['requisition_id'].errors && f['requisition_id'].errors['maxlength']">ID should be 6 character.</div>
                 </div>
-            </div>
+            </div> -->
             
             <div class="col-md-4">
-                <label for="inputEmail5" class="form-label">Client</label> 
-                <input type="text" class="form-control" id="inputEmail5" name="client" formControlName="client">
-                <div *ngIf="f.client.errors?.['required'] && f.client.touched" class="alert alert-danger">
+                <label for="inputEmail5" class="form-label">Client
+                    <span class="mandatory-fields">*</span>
+                    <span *ngIf="f.client.errors?.['required'] && f.client.touched" class="form-error-msg">&nbsp;&nbsp;Required</span>
+                </label> 
+                <input type="text" class="form-control" id="inputEmail5" name="client" formControlName="client" [ngClass]="{ 'is-invalid':  f.client.errors && f.client.touched}">
+                <!-- <div *ngIf="f.client.errors?.['required'] && f.client.touched" class="alert alert-danger">
                     Please enter  client.
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4"> 
-                <label for="inputPassword5" class="form-label">Role</label> 
-                <input type="text" class="form-control" id="inputPassword5" name="role" formControlName="role">
-                <div *ngIf="f.role.errors?.['required'] && f.role.touched" class="alert alert-danger">
+                <label for="inputPassword5" class="form-label">Role
+                    <span class="mandatory-fields">*</span>
+                    <span *ngIf="f.role.errors?.['required'] && f.role.touched" class="form-error-msg">&nbsp;&nbsp;Required</span>
+                </label> 
+                <input type="text" class="form-control" id="inputPassword5" name="role" formControlName="role" [ngClass]="{ 'is-invalid':  f.role.errors && f.role.touched}">
+                <!-- <div *ngIf="f.role.errors?.['required'] && f.role.touched" class="alert alert-danger">
                     Please enter role.
-                </div>
+                </div> -->
             </div>
             <div class="col-4"> 
                 <label for="inputAddress5" class="form-label">No.of.Positions</label> 
                 <input type="text" class="form-control" id="inputAddres5s" placeholder="" name="no_positions" formControlName="no_positions">
-                <div *ngIf="f.no_positions.errors?.['required'] && f.no_positions.touched" class="alert alert-danger">
-                    Please enter a no_positions.
-                </div>
+                <!-- <div *ngIf="f.no_positions.errors?.['required'] && f.no_positions.touched" class="alert alert-danger">
+                   Please enter a no_positions.
+                </div>  -->
             </div>
             <div class="col-4">
                 <label for="inputAddress2" class="form-label">Position Type</label>
@@ -51,9 +57,9 @@
                     <option value="">Choose...</option>
                     <option value="hr">HR</option>
                 </select>
-                <div *ngIf="f.positiontype.errors?.['required'] && f.positiontype.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.positiontype.errors?.['required'] && f.positiontype.touched" class="alert alert-danger">
                     Please select a position.
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4"> 
                 <label for="inputCity" class="form-label" >Experience</label>
@@ -62,9 +68,9 @@
                     <option value="0-1">0-1</option>
                     <option value="2+">2+</option>
                  </select>
-                 <div *ngIf="f.experience.errors?.['required'] && f.experience.touched" class="alert alert-danger">
+                 <!-- <div *ngIf="f.experience.errors?.['required'] && f.experience.touched" class="alert alert-danger">
                     Please select a experience.
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Primary Skills</label>
@@ -73,9 +79,9 @@
                     <option value="python">Python</option>
                     <option value="java">Java</option>
                 </select>
-                <div *ngIf="f.primaryskills.errors?.['required'] && f.primaryskills.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.primaryskills.errors?.['required'] && f.primaryskills.touched" class="alert alert-danger">
                     Please select a primaryskills.
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4"> 
                 <label for="inputZip" class="form-label">Secondary Skills</label> 
@@ -84,25 +90,25 @@
                     <option value="angular">Angular</option>
                     <option value="python">Python</option>
                  </select>
-                 <div *ngIf="f.secondaryskills.errors?.['required'] && f.secondaryskills.touched" class="alert alert-danger">
+                 <!-- <div *ngIf="f.secondaryskills.errors?.['required'] && f.secondaryskills.touched" class="alert alert-danger">
                     Please select a secondaryskills.
-                </div>
-            </div>
-            
-            <div class="col-4"> 
-                <label for="inputAddress5" class="form-label">Location</label> 
-                <input type="text" class="form-control" id="inputAddres5s" placeholder="" name="location" formControlName="location">
-                <div *ngIf="f.location.errors?.['required'] && f.location.touched" class="alert alert-danger">
-                    Please enter location.
-                </div>
+                </div> -->
             </div>
 
             <div class="col-4"> 
                 <label for="inputAddress5" class="form-label">Salary Range</label> 
                 <input type="text" class="form-control" id="inputAddres5s" placeholder="" name="salaryrange" formControlName="salaryrange">
-                <div *ngIf="f.salaryrange.errors?.['required'] && f.salaryrange.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.salaryrange.errors?.['required'] && f.salaryrange.touched" class="alert alert-danger">
                     Please enter salaryrange.
-                </div>
+                </div> -->
+            </div>
+
+            <div class="col-4"> 
+                <label for="inputAddress5" class="form-label">Location</label> 
+                <input type="text" class="form-control" id="inputAddres5s" placeholder="" name="location" formControlName="location">
+                <!-- <div *ngIf="f.location.errors?.['required'] && f.location.touched" class="alert alert-danger">
+                    Please enter location.
+                </div> -->
             </div>
 
             <div class="col-md-4"> 
@@ -112,9 +118,9 @@
                     <option value="rupee">Rupee</option>
                     <option value="dollar">Dollar</option>
                  </select>
-                 <div *ngIf="f.currency.errors?.['required'] && f.currency.touched" class="alert alert-danger">
+                 <!-- <div *ngIf="f.currency.errors?.['required'] && f.currency.touched" class="alert alert-danger">
                     Please select a currency.
-                </div>
+                </div> -->
             </div>
             
             <div class="col-md-4"> 
@@ -124,9 +130,9 @@
                     <option value="wfo">WFO</option>
                     <option value="wfh">WFH</option>
                  </select>
-                 <div *ngIf="f.worktype.errors?.['required'] && f.worktype.touched" class="alert alert-danger">
+                 <!-- <div *ngIf="f.worktype.errors?.['required'] && f.worktype.touched" class="alert alert-danger">
                     Please select a worktype.
-                </div>
+                </div> -->
             </div>
 
             <div class="col-md-4"> 
@@ -136,33 +142,33 @@
                     <option value="inprogress">Inprogress</option>
                     <option value="completed">Completed</option>
                  </select>
-                 <div *ngIf="f.status.errors?.['required'] && f.status.touched" class="alert alert-danger">
+                 <!-- <div *ngIf="f.status.errors?.['required'] && f.status.touched" class="alert alert-danger">
                     Please select status.
-                </div>
+                </div> -->
             </div>
 
             <div class="col-md-4">
                 <label for="inputDate" class="form-label">Start Date</label>
                 <input type="date" class="form-control" name="startdate" formControlName="startdate">
-                <div *ngIf="f.startdate.errors?.['required'] && f.startdate.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.startdate.errors?.['required'] && f.startdate.touched" class="alert alert-danger">
                     Please select startdate.
-                </div>
+                </div> -->
             </div>
 
             <div class="col-md-4">
                 <label for="inputDate" class="form-label">End Date</label>
                 <input type="date" class="form-control" name="enddate" formControlName="enddate">
-                <div *ngIf="f.enddate.errors?.['required'] && f.enddate.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.enddate.errors?.['required'] && f.enddate.touched" class="alert alert-danger">
                     Please select enddate.
-                </div>
+                </div> -->
             </div>
 
             <div class="col-md-12">
                 <label for="inputeDate" class="form-label">Job Description</label>
                 <textarea name="jobdescription" id="jobdescription" class="form-control"  name="jobdescription" formControlName="jobdescription"></textarea>
-                <div *ngIf="f.jobdescription.errors?.['required'] && f.jobdescription.touched" class="alert alert-danger">
+                <!-- <div *ngIf="f.jobdescription.errors?.['required'] && f.jobdescription.touched" class="alert alert-danger">
                     Please select a jobdescription.
-                </div>
+                </div> -->
             </div>
         
             <div class="text-center" style="display: flex;justify-content: center;"> 
