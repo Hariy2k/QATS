@@ -11,7 +11,7 @@
         </div>
         <div>
             <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
-                data-bs-target="#verticalycentered">Create User</button>
+                data-bs-target="#verticalycentered">Add User</button>
             <div class="modal fade" id="verticalycentered" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -46,12 +46,9 @@
                                                 <input type="text" class="form-control" id="inputName5" name="fullname"
                                                     formControlName="fullname"
                                                     [ngClass]="{ 'is-invalid':  f.fullname.errors && f.fullname.touched}">
-
-
                                                 <!-- <div *ngIf="f.fullname.errors?.['required'] && f.fullname.touched" class="invalid-feedback">
                                                 <div *ngIf="f.fullname.errors">Required</div>
                                             </div> -->
-
                                             </div>
 
                                         </div>
@@ -65,36 +62,35 @@
                                             <input type="text" class="form-control" id="inputName5" name="email"
                                                 formControlName="email"
                                                 [ngClass]="{ 'is-invalid':  f.email.errors && f.email.touched}">
-                                            <!-- <div *ngIf="f.email.errors?.['required'] && f.email.touched" class="newjobalertError alert-danger">
-                                                Email Required.
-                                            </div> -->
-                                            <!-- <div *ngIf="f.email.errors?.['required'] && f.email.touched" class="invalid-feedback">
-                                                <div *ngIf="f.email.errors">Required</div>
-                                            </div> -->
                                         </div>
                                         <div class="col-md-12">
-                                            <label for="inputName5" class="form-label">Position <span
+                                            <label for="inputName5" class="form-label">Department <span
                                                     class="mandatory-fields">*</span>
-                                                <span *ngIf="f.position.errors?.['required'] && f.position.touched"
+                                                <span *ngIf="f.department.errors?.['required'] && f.department.touched"
+                                                    class="form-error-msg">&nbsp;&nbsp;Required</span>
+
+                                            </label>
+                                            <input type="text" class="form-control" id="inputName5" name="department"
+                                                formControlName="department"
+                                                [ngClass]="{ 'is-invalid':  f.department.errors && f.department.touched}">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="inputName5" class="form-label">Designation <span
+                                                    class="mandatory-fields">*</span>
+                                                <span *ngIf="f.designation.errors?.['required'] && f.designation.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
-                                            <input type="text" class="form-control" id="inputName5" name="position"
-                                                formControlName="position"
-                                                [ngClass]="{ 'is-invalid':  f.position.errors && f.position.touched}">
-                                            <!-- <div *ngIf="f.position.errors?.['required'] && f.position.touched" class="newjobalertError alert-danger">
-                                                    Position Required.
-                                                </div> -->
-                                            <!-- <div *ngIf="f.position.errors?.['required'] && f.position.touched" class="invalid-feedback">
-                                                    <div *ngIf="f.position.errors">Required</div>
-                                                </div> -->
+                                            <input type="text" class="form-control" id="inputName5" name="designation"
+                                                formControlName="designation"
+                                                [ngClass]="{ 'is-invalid':  f.designation.errors && f.designation.touched}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal" style="width: 6rem;"><span>Close</span></button>
                                 <button type="submit" class="btn btn-primary rounded-pill"
-                                    [disabled]="newUserForm.invalid">Save</button>
+                                    [disabled]="newUserForm.invalid" style="width: 6rem;">Save</button>
                             </div>
                         </form>
                     </div>
@@ -169,20 +165,6 @@
                                 </div>
                             </td>
                         </tr>
-                        <!-- <tr>
-                            <th scope="row">4</th>
-                            <td>Angus Grady</td>
-                            <td>HR</td>
-                            <td>34</td>
-                            <td>2012-06-11</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Raheem Lehner</td>
-                            <td>Dynamic Division Officer</td>
-                            <td>47</td>
-                            <td>2011-04-19</td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -246,8 +228,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid">Save</button>
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal" style="width: 6rem;">Close</button>
+                    <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid" style="width: 6rem;">Save</button>
                 </div>
             </form>
         </div>

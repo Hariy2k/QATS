@@ -43,6 +43,7 @@ import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages
 import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
 import { NewjobComponent } from './pages/newjob/newjob.component';
 import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
+import { ControlPanalComponent } from './pages/control-panal/control-panal.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
     PagesForgotpasswordComponent,
     PagesResetpasswordComponent,
     NewjobComponent,
-    PagesUsersComponent
+    PagesUsersComponent,
+    ControlPanalComponent,
   ],
   imports: [
     BrowserModule,

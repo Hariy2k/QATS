@@ -36,6 +36,7 @@ import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages
 import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
 import { NewjobComponent } from './pages/newjob/newjob.component';
 import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
+import { ControlPanalComponent } from './pages/control-panal/control-panal.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -74,7 +75,8 @@ const routes: Routes = [
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
   { path: 'new-job', component: NewjobComponent },
-  { path: 'pages-users', component: PagesUsersComponent }
+  { path: 'pages-users', component: PagesUsersComponent },
+  {path:'control-panal', component:ControlPanalComponent}
 ];
 
 @NgModule({
