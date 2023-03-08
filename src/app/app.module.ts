@@ -44,7 +44,11 @@ import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-r
 import { NewjobComponent } from './pages/newjob/newjob.component';
 import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
 import { ControlPanalComponent } from './pages/control-panal/control-panal.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +97,11 @@ import { ControlPanalComponent } from './pages/control-panal/control-panal.compo
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatChipsModule,MatFormFieldModule,
+    MatAutocompleteModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

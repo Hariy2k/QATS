@@ -1,13 +1,13 @@
+.tbody {
+  height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
 
-  .tbody{
-      height:200px;
-      overflow-y:auto;
-      width: 100%;
-    }
-    /* thead,tbody,tr,td,th{
+/* thead,tbody,tr,td,th{
       display:block;
     } */
-    /* tbody{
+/* tbody{
       td{
         float:left;
       }
@@ -19,10 +19,82 @@
         }
       }
     } */
-    .icon-size{
-        color: #012970;
-        font-size: 20px;
-    }
-    .mandatory-fields{
-      color: red;
-  }
+.icon-size {
+  color: #012970;
+  font-size: 20px;
+}
+
+.mandatory-fields {
+  color: red;
+}
+
+.chip {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 31px;
+  border-radius: 20px;
+  padding: 0 12px;
+  /* font-size: 14px; */
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.chip.light-blue {
+  margin: 5px;
+  background-color: #B3E5FC;
+  color: #01579B;
+}
+
+.chip-text {
+  padding: 5px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.chip-close-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  color: #757575;
+  padding: 0;
+  height: 16px;
+  width: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip:hover .chip-close-button {
+  color: #424242;
+}
+
+
+.close {
+  position: relative;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.5;
+  background: transparent;
+  border: none;
+  /* remove border */
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.table__headers h5 {
+  font-weight: 700;
+}
