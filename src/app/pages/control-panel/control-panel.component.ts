@@ -5,11 +5,11 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 @Component({
-  selector: 'app-control-panal',
-  templateUrl: './control-panal.component.html',
-  styleUrls: ['./control-panal.component.css']
+  selector: 'app-control-panel',
+  templateUrl: './control-panel.component.html',
+  styleUrls: ['./control-panel.component.css']
 })
-export class ControlPanalComponent {
+export class ControlPanelComponent {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   chipsCtrl = new FormControl('');
   chipsArray: string[] = [];

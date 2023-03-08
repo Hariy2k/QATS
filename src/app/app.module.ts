@@ -43,7 +43,7 @@ import { PagesForgotpasswordComponent } from './pages/pages-forgotpassword/pages
 import { PagesResetpasswordComponent } from './pages/pages-resetpassword/pages-resetpassword.component';
 import { NewjobComponent } from './pages/newjob/newjob.component';
 import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
-import { ControlPanalComponent } from './pages/control-panal/control-panal.component';
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -91,7 +91,7 @@ import {MatIconModule} from '@angular/material/icon';
     PagesResetpasswordComponent,
     NewjobComponent,
     PagesUsersComponent,
-    ControlPanalComponent,
+    ControlPanelComponent,
   ],
   imports: [
     BrowserModule,
