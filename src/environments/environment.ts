@@ -10,7 +10,7 @@ export const environment = {
     userPoolWebClientId: '1aenn6j7f08tn04ikdh0vtlngq',
   },
   usersService_getAllUsersURL : 'https://nlvd0cels6.execute-api.us-east-1.amazonaws.com/alpha/list_of_users/company_name?company_name=Quad',
-  usersService_getUserbyEmailURL : 'https://nlvd0cels6.execute-api.us-east-1.amazonaws.com/alpha/get/email?email=shahed@quadrantresource.com',
+  usersService_getUserbyEmailURL : 'https://nlvd0cels6.execute-api.us-east-1.amazonaws.com/alpha/get/email?email=${userEmail}',
   usersService_addNewUserURL : 'https://nlvd0cels6.execute-api.us-east-1.amazonaws.com/alpha/create',
   usersService_updateUserURL: 'https://nlvd0cels6.execute-api.us-east-1.amazonaws.com/alpha/update'
 };

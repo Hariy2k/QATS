@@ -11,7 +11,7 @@
         </div>
         <div>
             <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
-                data-bs-target="#verticalycentered">
+                data-bs-target="#verticalycentered" (click)="formReset()">
                 Add User
             </button>
             <div class="modal fade" id="verticalycentered" tabindex="-1">
@@ -26,39 +26,36 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="row g-3">
-                                        <div>
+                                        <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Employee ID <span
                                                     class="mandatory-fields">*</span>
-                                                <span *ngIf="f.employeeID.errors?.['required'] && f.employeeID.touched"
+                                                <span *ngIf="f.emp_id.errors?.['required'] && f.emp_id.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
-                                            <input type="text" class="form-control" id="inputName5" name="employeeID"
-                                                formControlName="employeeID" [ngClass]="{
-                          'is-invalid':
-                            f.employeeID.errors && f.employeeID.touched
-                        }" />
+                                            <input type="text" class="form-control" id="inputName5" name="emp_id"
+                                                formControlName="emp_id" [ngClass]="{'is-invalid':f.emp_id.errors && f.emp_id.touched}" />
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div>
                                                 <label for="inputName5" class="form-label">Name <span
                                                         class="mandatory-fields">*</span>
-                                                    <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
+                                                    <span *ngIf="f.name.errors?.['required'] && f.name.touched"
                                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
                                                 </label>
                                                 <!-- <div *ngIf="f.fullName.errors?.['required'] && f.fullName.touched" class="invalid-feedback">
                                                 <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
-                                                <input type="text" class="form-control" id="inputName5" name="fullName"
-                                                    formControlName="fullName" [ngClass]="{
+                                                <input type="text" class="form-control" id="inputName5" name="name"
+                                                    formControlName="name" [ngClass]="{
                             'is-invalid':
-                              f.fullName.errors && f.fullName.touched
+                              f.name.errors && f.name.touched
                           }" />
                                                 <!-- <div *ngIf="f.fullName.errors?.['required'] && f.fullName.touched" class="invalid-feedback">
                                                 <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Email <span
                                                     class="mandatory-fields">*</span>
                                                 <span *ngIf="f.email.errors?.['required'] && f.email.touched"
@@ -69,19 +66,19 @@
                           'is-invalid': f.email.errors && f.email.touched
                         }" />
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Phone Number <span
                                                     class="mandatory-fields">*</span>
-                                                <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                                <span *ngIf="f.phone.errors?.['required'] && f.phone.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
-                                            <input type="text" class="form-control" id="inputName5" name="email"
-                                                formControlName="email" [ngClass]="{
+                                            <input type="text" class="form-control" id="inputName5" name="phone"
+                                                formControlName="phone" [ngClass]="{
                           'is-invalid':
-                            f.phoneNumber.errors && f.phoneNumber.touched
+                            f.phone.errors && f.phone.touched
                         }" />
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Department <span
                                                     class="mandatory-fields">*</span>
                                                 <span *ngIf="f.department.errors?.['required'] && f.department.touched"
@@ -93,7 +90,7 @@
                             f.department.errors && f.department.touched
                         }" />
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Designation <span
                                                     class="mandatory-fields">*</span>
                                                 <span
@@ -114,8 +111,8 @@
                                     style="width: 6rem">
                                     <span>Close</span>
                                 </button>
-                                <button type="submit" class="btn btn-primary rounded-pill"
-                                    [disabled]="newUserForm.invalid" style="width: 6rem">
+                                <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid"
+                                    style="width: 6rem">
                                     Save
                                 </button>
                             </div>

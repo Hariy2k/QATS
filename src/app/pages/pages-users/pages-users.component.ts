@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/datatypes';
 import { first } from 'rxjs/operators';
@@ -16,12 +16,12 @@ export class PagesUsersComponent implements OnInit {
   usersList!: Array<User>
 
   newUserForm = new FormGroup({
-    fullName: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     designation: new FormControl('', [Validators.required]),
-    employeeID: new FormControl('', [Validators.required]),
+    emp_id: new FormControl('', [Validators.required]),
     department: new FormControl('', [Validators.required]),
-    phoneNumber: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
   })
 
   constructor(
@@ -47,16 +47,27 @@ export class PagesUsersComponent implements OnInit {
 
   submit() {
     //this.submitted = true;
-    var result = this.newUserForm.value
-    console.log("New user Form : ", result)
-    this.newUserForm.reset()
-    if (this.newUserForm.invalid) {
-      return
+    const payload:any = {
+      name:this.newUserForm.value.name,
+      email:this.newUserForm.value.email,
+      department: this.newUserForm.value.department,
+      designation:this.newUserForm.value.designation,
+      phone:this.newUserForm.value.phone
+    }
+    const emp_id:any = this.newUserForm.value.emp_id;
+    if (this.newUserForm.valid) {
+      this.userService.addNewUser(payload,'Quad',emp_id).subscribe((result:any)=>{
+        console.log("Result :", result)
+        this.newUserForm.reset();
+      })
     }
   }
 
   get f() {
     return this.newUserForm.controls
+  }
+  formReset(){
+    this.newUserForm.reset()
   }
 
 }
