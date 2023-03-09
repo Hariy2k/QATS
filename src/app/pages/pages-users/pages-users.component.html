@@ -1,5 +1,5 @@
 <main id="main" class="main">
-    <div class="pagetitle" style="display: flex;flex-direction: row;justify-content: space-between;">
+    <div class="pagetitle" style="display: flex; flex-direction: row; justify-content: space-between">
         <div>
             <h1>Users</h1>
             <nav>
@@ -11,9 +11,11 @@
         </div>
         <div>
             <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
-                data-bs-target="#verticalycentered">Add User</button>
+                data-bs-target="#verticalycentered">
+                Add User
+            </button>
             <div class="modal fade" id="verticalycentered" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <form [formGroup]="newUserForm" (ngSubmit)="submit()">
                             <div class="modal-header">
@@ -30,8 +32,11 @@
                                                 <span *ngIf="f.employeeID.errors?.['required'] && f.employeeID.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
-                                            <input type="text" class="form-control" id="inputName5" name="employeeid"
-                                                formControlName="employeeid" [ngClass]="{ 'is-invalid':  f.employeeID.errors && f.employeeID.touched}">
+                                            <input type="text" class="form-control" id="inputName5" name="employeeID"
+                                                formControlName="employeeID" [ngClass]="{
+                          'is-invalid':
+                            f.employeeID.errors && f.employeeID.touched
+                        }" />
                                         </div>
                                         <div class="col-md-12">
                                             <div>
@@ -40,68 +45,79 @@
                                                     <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
                                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
                                                 </label>
-                                                <!-- <div *ngIf="f.fullname.errors?.['required'] && f.fullname.touched" class="invalid-feedback">
-                                                <div *ngIf="f.fullname.errors">Required</div>
+                                                <!-- <div *ngIf="f.fullName.errors?.['required'] && f.fullName.touched" class="invalid-feedback">
+                                                <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
-                                                <input type="text" class="form-control" id="inputName5" name="fullname"
-                                                    formControlName="fullname"
-                                                    [ngClass]="{ 'is-invalid':  f.fullName.errors && f.fullName.touched}">
-                                                <!-- <div *ngIf="f.fullname.errors?.['required'] && f.fullname.touched" class="invalid-feedback">
-                                                <div *ngIf="f.fullname.errors">Required</div>
+                                                <input type="text" class="form-control" id="inputName5" name="fullName"
+                                                    formControlName="fullName" [ngClass]="{
+                            'is-invalid':
+                              f.fullName.errors && f.fullName.touched
+                          }" />
+                                                <!-- <div *ngIf="f.fullName.errors?.['required'] && f.fullName.touched" class="invalid-feedback">
+                                                <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
                                             </div>
-
                                         </div>
                                         <div class="col-md-12">
                                             <label for="inputName5" class="form-label">Email <span
                                                     class="mandatory-fields">*</span>
                                                 <span *ngIf="f.email.errors?.['required'] && f.email.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
-
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="email"
-                                                formControlName="email"
-                                                [ngClass]="{ 'is-invalid':  f.email.errors && f.email.touched}">
+                                                formControlName="email" [ngClass]="{
+                          'is-invalid': f.email.errors && f.email.touched
+                        }" />
                                         </div>
                                         <div class="col-md-12">
                                             <label for="inputName5" class="form-label">Phone Number <span
                                                     class="mandatory-fields">*</span>
                                                 <span *ngIf="f.email.errors?.['required'] && f.email.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
-
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="email"
-                                                formControlName="email"
-                                                [ngClass]="{ 'is-invalid':  f.phoneNumber.errors && f.phoneNumber.touched}">
+                                                formControlName="email" [ngClass]="{
+                          'is-invalid':
+                            f.phoneNumber.errors && f.phoneNumber.touched
+                        }" />
                                         </div>
                                         <div class="col-md-12">
                                             <label for="inputName5" class="form-label">Department <span
                                                     class="mandatory-fields">*</span>
                                                 <span *ngIf="f.department.errors?.['required'] && f.department.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
-
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="department"
-                                                formControlName="department"
-                                                [ngClass]="{ 'is-invalid':  f.department.errors && f.department.touched}">
+                                                formControlName="department" [ngClass]="{
+                          'is-invalid':
+                            f.department.errors && f.department.touched
+                        }" />
                                         </div>
                                         <div class="col-md-12">
                                             <label for="inputName5" class="form-label">Designation <span
                                                     class="mandatory-fields">*</span>
-                                                <span *ngIf="f.designation.errors?.['required'] && f.designation.touched"
+                                                <span
+                                                    *ngIf="f.designation.errors?.['required'] && f.designation.touched"
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="designation"
-                                                formControlName="designation"
-                                                [ngClass]="{ 'is-invalid':  f.designation.errors && f.designation.touched}">
+                                                formControlName="designation" [ngClass]="{
+                          'is-invalid':
+                            f.designation.errors && f.designation.touched
+                        }" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal" style="width: 6rem;"><span>Close</span></button>
+                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
+                                    style="width: 6rem">
+                                    <span>Close</span>
+                                </button>
                                 <button type="submit" class="btn btn-primary rounded-pill"
-                                    [disabled]="newUserForm.invalid" style="width: 6rem;">Save</button>
+                                    [disabled]="newUserForm.invalid" style="width: 6rem">
+                                    Save
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -111,81 +127,41 @@
     </div>
     <section class="section">
         <div class="card">
-            <div class="card-body" style="    padding: 10px;">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <!-- <th scope="col">#</th> -->
-                            <th scope="col">Name</th>
-                            <th scope="col">Department</th>
-                            <th scope="col">Designation</th>
-                            <!-- <th scope="col">Start Date</th> -->
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <!-- <th scope="row">1</th> -->
-                            <td scope="row">Brandon Jacob</td>
-                            <td>HR</td>
-                            <td>HR</td>
-                            <!-- <td>2016-05-25</td> -->
-                            <td class="edit-del-button">
-                                <div>
-                                    <i class="ri-edit-2-fill icon-size" data-bs-toggle="modal"
-                                    data-bs-target="#verticalycentered1"></i>
-                                    &nbsp;&nbsp;
-                                </div>
-                                <div>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <i class="ri-delete-bin-5-fill icon-size"></i>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- <th scope="row">2</th> -->
-                            <td scop="row">Bridie Kessler</td>
-                            <td>Developer</td>
-                            <td>SE</td>
-                            <!-- <td>2014-12-05</td> -->
-                            <td class="edit-del-button">
-                                <div>
-                                    <i class="ri-edit-2-fill icon-size"></i>
-                                    &nbsp;&nbsp;
-                                </div>
-                                <div>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <i class="ri-delete-bin-5-fill icon-size"></i>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- <th scope="row">3</th> -->
-                            <td scope="row">Ashleigh Langosh</td>
-                            <td>Finance</td>
-                            <td>Accounts</td>
-                            <!-- <td>2011-08-12</td> -->
-                            <td class="edit-del-button">
-                                <div>
-                                    <i class="ri-edit-2-fill icon-size"></i>
-                                    &nbsp;&nbsp;
-                                </div>
-                                <div>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <i class="ri-delete-bin-5-fill icon-size"></i>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card-body" style="padding: 10px">
+                <ng-container *ngIf="!loading">
+                    <ng-container *ngIf="usersList">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of usersList;let i = index">
+                                    <td scope="row">{{user.name}}</td>
+                                    <td>{{user.department}}</td>
+                                    <td>{{user.designation}}</td>
+                                    <td class="edit-del-button">
+                                        <div>
+                                            <i class="ri-edit-2-fill icon-size" data-bs-toggle="modal"
+                                                data-bs-target="#verticalycentered1"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-container>
+                </ng-container>
             </div>
         </div>
     </section>
 </main>
 
-
 <!-- Model Popupbutton for Edit  -->
-<div class="modal fade" id="verticalycentered1" tabindex="-1">
+<!-- <div class="modal fade" id="verticalycentered1" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <form>
@@ -200,28 +176,28 @@
                                 <div>
                                     <label for="inputName5" class="form-label">Employee ID <span
                                             class="mandatory-fields">*</span>
-                                        <!-- <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
-                                            class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                        <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span>
                                     </label>
-                                    <input type="text" class="form-control" id="inputName5" name="fullname"
-                                        formControlName="employeeid">
+                                    <input type="text" class="form-control" id="inputName5" name="fullName"
+                                        formControlName="employeeID">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div>
                                     <label for="inputName5" class="form-label">Name <span
                                             class="mandatory-fields">*</span>
-                                        <!-- <span *ngIf="f.fullname.errors?.['required'] && f.fullname.touched"
-                                            class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                        <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span>
                                     </label>
-                                    <input type="text" class="form-control" id="inputName5" name="fullname"
-                                        formControlName="fullname">
+                                    <input type="text" class="form-control" id="inputName5" name="fullName"
+                                        formControlName="fullName">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <label for="inputName5" class="form-label">Department <span class="mandatory-fields">*</span>
-                                    <!-- <span *ngIf="f.email.errors?.['required'] && f.email.touched"
-                                        class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                    <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                        class="form-error-msg">&nbsp;&nbsp;Required</span>
                                 </label>
                                 <input type="text" class="form-control" id="inputName5" name="email"
                                     formControlName="email">
@@ -229,8 +205,8 @@
                             <div class="col-md-12">
                                 <label for="inputName5" class="form-label">Designation <span
                                         class="mandatory-fields">*</span>
-                                    <!-- <span *ngIf="f.position.errors?.['required'] && f.position.touched"
-                                        class="form-error-msg">&nbsp;&nbsp;Required</span> -->
+                                    <span *ngIf="f.designation.errors?.['required'] && f.designation.touched"
+                                        class="form-error-msg">&nbsp;&nbsp;Required</span>
                                 </label>
                                 <input type="text" class="form-control" id="inputName5" name="position"
                                     formControlName="position">
@@ -245,4 +221,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->

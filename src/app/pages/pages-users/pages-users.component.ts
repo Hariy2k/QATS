@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NewUser } from 'src/app/models/datatypes';
+import { User } from 'src/app/models/datatypes';
+import { first } from 'rxjs/operators';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-pages-users',
@@ -9,6 +11,9 @@ import { NewUser } from 'src/app/models/datatypes';
 })
 export class PagesUsersComponent implements OnInit {
   //submitted:boolean = false;
+
+  loading!: boolean;
+  usersList!: Array<User>
 
   newUserForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
@@ -19,9 +24,25 @@ export class PagesUsersComponent implements OnInit {
     phoneNumber: new FormControl('', [Validators.required]),
   })
 
-  constructor(private formBuilder: FormBuilder) { }
-  ngOnInit(): void {
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserServiceService
+  ) {
+    this.loading = true
+  }
 
+  ngOnInit(): void {
+    this.userService.getAllUsers('Quad').pipe().pipe(first()).subscribe((data: any) => {
+      console.log(data)
+      if (Array.isArray(data)) {
+        this.usersList = data
+      }
+      this.loading = false;
+    },
+      (error: string) => {
+        console.log(error);
+        this.loading = false;
+      });
   }
 
   submit() {

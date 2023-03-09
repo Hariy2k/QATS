@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,10 +46,10 @@ import { NewjobComponent } from './pages/newjob/newjob.component';
 import { PagesUsersComponent } from './pages/pages-users/pages-users.component';
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatIconModule} from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,8 +99,10 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MatChipsModule,MatFormFieldModule,
+    MatChipsModule,
+    MatFormFieldModule,
     MatAutocompleteModule,
     MatIconModule
   ],
