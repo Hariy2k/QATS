@@ -11,11 +11,12 @@ export class PagesUsersComponent implements OnInit {
   //submitted:boolean = false;
 
   newUserForm = new FormGroup({
-    fullname: new FormControl('', [Validators.required]),
+    fullName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     designation: new FormControl('', [Validators.required]),
-    employeeid: new FormControl('', [Validators.required]),
-    department: new FormControl('', [Validators.required])
+    employeeID: new FormControl('', [Validators.required]),
+    department: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [Validators.required]),
   })
 
   constructor(private formBuilder: FormBuilder) { }
