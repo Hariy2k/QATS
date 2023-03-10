@@ -19,7 +19,7 @@
                     <div class="modal-content">
                         <form [formGroup]="newUserForm" (ngSubmit)="submit()">
                             <div class="modal-header">
-                                <h5 class="modal-title">Create New User</h5>
+                                <h5 class="modal-title">Create New User </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -106,7 +106,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer" style="    display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;">
+                                <div>
+                                <span class="form-error-msg">{{errorMessage}}</span>
+                              </div>
+                              <div>
                                 <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
                                     style="width: 6rem">
                                     <span>Close</span>
@@ -115,6 +121,7 @@
                                     style="width: 6rem">
                                     Save
                                 </button>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -144,7 +151,7 @@
                                     <td class="edit-del-button">
                                         <div>
                                             <i class="ri-edit-2-fill icon-size" data-bs-toggle="modal"
-                                                data-bs-target="#verticalycentered1"></i>
+                                                data-bs-target="#verticalycentered1" (click)="updateUser(user.email)"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -158,55 +165,77 @@
 </main>
 
 <!-- Model Popupbutton for Edit  -->
-<!-- <div class="modal fade" id="verticalycentered1" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="verticalycentered1" tabindex="-1">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form>
+            <form [formGroup]="newUserForm">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" *ngIf="updateUserData">
                     <div class="card-body">
                         <div class="row g-3">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="inputName5" class="form-label">Employee ID <span
                                             class="mandatory-fields">*</span>
-                                        <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
+                                        <span *ngIf="f.emp_id.errors?.['required'] && f.emp_id.touched"
                                             class="form-error-msg">&nbsp;&nbsp;Required</span>
                                     </label>
-                                    <input type="text" class="form-control" id="inputName5" name="fullName"
-                                        formControlName="employeeID">
+                                    <input type="text" class="form-control" id="inputName5" name="emp_id"
+                                        formControlName="emp_id" [ngModel]="updateUserData.emp_id">
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="inputName5" class="form-label">Name <span
                                             class="mandatory-fields">*</span>
-                                        <span *ngIf="f.fullName.errors?.['required'] && f.fullName.touched"
+                                        <span *ngIf="f.name.errors?.['required'] && f.name.touched"
                                             class="form-error-msg">&nbsp;&nbsp;Required</span>
                                     </label>
-                                    <input type="text" class="form-control" id="inputName5" name="fullName"
-                                        formControlName="fullName">
+                                    <input type="text" class="form-control" id="inputName5" name="name"
+                                        formControlName="name" [ngModel]="updateUserData.name">
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="inputName5" class="form-label">Email <span
+                                            class="mandatory-fields">*</span>
+                                        <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="inputName5" name="email"
+                                        formControlName="email" [ngModel]="updateUserData.email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="inputName5" class="form-label">Phone Number <span
+                                            class="mandatory-fields">*</span>
+                                        <span *ngIf="f.phone.errors?.['required'] && f.phone.touched"
+                                            class="form-error-msg">&nbsp;&nbsp;Required</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="inputName5" name="phone"
+                                        formControlName="phone" [ngModel]="updateUserData.phone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="inputName5" class="form-label">Department <span class="mandatory-fields">*</span>
-                                    <span *ngIf="f.email.errors?.['required'] && f.email.touched"
+                                    <span *ngIf="f.department.errors?.['required'] && f.department.touched"
                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
                                 </label>
-                                <input type="text" class="form-control" id="inputName5" name="email"
-                                    formControlName="email">
+                                <input type="text" class="form-control" id="inputName5" name="department"
+                                    formControlName="department" [ngModel]="updateUserData.department">
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <label for="inputName5" class="form-label">Designation <span
                                         class="mandatory-fields">*</span>
                                     <span *ngIf="f.designation.errors?.['required'] && f.designation.touched"
                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
                                 </label>
-                                <input type="text" class="form-control" id="inputName5" name="position"
-                                    formControlName="position">
+                                <input type="text" class="form-control" id="inputName5" name="designation"
+                                    formControlName="designation" [ngModel]="updateUserData.designation">
                             </div>
                         </div>
                     </div>
@@ -218,4 +247,4 @@
             </form>
         </div>
     </div>
-</div> -->
+</div> 
