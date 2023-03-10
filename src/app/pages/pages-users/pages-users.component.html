@@ -5,7 +5,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-                    <li class="breadcrumb-item">users</li>
+                    <li class="breadcrumb-item">Users</li>
                 </ol>
             </nav>
         </div>
@@ -33,7 +33,8 @@
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="emp_id"
-                                                formControlName="emp_id" [ngClass]="{'is-invalid':f.emp_id.errors && f.emp_id.touched}" />
+                                                formControlName="emp_id"
+                                                [ngClass]="{'is-invalid':f.emp_id.errors && f.emp_id.touched}" />
                                         </div>
                                         <div class="col-md-6">
                                             <div>
@@ -46,10 +47,8 @@
                                                 <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
                                                 <input type="text" class="form-control" id="inputName5" name="name"
-                                                    formControlName="name" [ngClass]="{
-                            'is-invalid':
-                              f.name.errors && f.name.touched
-                          }" />
+                                                    formControlName="name"
+                                                    [ngClass]="{'is-invalid': f.name.errors && f.name.touched}" />
                                                 <!-- <div *ngIf="f.fullName.errors?.['required'] && f.fullName.touched" class="invalid-feedback">
                                                 <div *ngIf="f.fullName.errors">Required</div>
                                             </div> -->
@@ -62,9 +61,8 @@
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="email"
-                                                formControlName="email" [ngClass]="{
-                          'is-invalid': f.email.errors && f.email.touched
-                        }" />
+                                                formControlName="email"
+                                                [ngClass]="{'is-invalid': f.email.errors && f.email.touched}" />
                                         </div>
                                         <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Phone Number <span
@@ -73,10 +71,8 @@
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="phone"
-                                                formControlName="phone" [ngClass]="{
-                          'is-invalid':
-                            f.phone.errors && f.phone.touched
-                        }" />
+                                                formControlName="phone"
+                                                [ngClass]="{'is-invalid':f.phone.errors && f.phone.touched}" />
                                         </div>
                                         <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Department <span
@@ -85,10 +81,8 @@
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="department"
-                                                formControlName="department" [ngClass]="{
-                          'is-invalid':
-                            f.department.errors && f.department.touched
-                        }" />
+                                                formControlName="department"
+                                                [ngClass]="{'is-invalid':f.department.errors && f.department.touched}" />
                                         </div>
                                         <div class="col-md-6">
                                             <label for="inputName5" class="form-label">Designation <span
@@ -98,30 +92,27 @@
                                                     class="form-error-msg">&nbsp;&nbsp;Required</span>
                                             </label>
                                             <input type="text" class="form-control" id="inputName5" name="designation"
-                                                formControlName="designation" [ngClass]="{
-                          'is-invalid':
-                            f.designation.errors && f.designation.touched
-                        }" />
+                                                formControlName="designation"
+                                                [ngClass]="{'is-invalid':f.designation.errors && f.designation.touched}" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer" style="    display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;">
+                            <div class="modal-footer"
+                                style="display: flex;flex-direction: row;justify-content: space-between;">
                                 <div>
-                                <span class="form-error-msg">{{errorMessage}}</span>
-                              </div>
-                              <div>
-                                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
-                                    style="width: 6rem">
-                                    <span>Close</span>
-                                </button>
-                                <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid"
-                                    style="width: 6rem">
-                                    Save
-                                </button>
-                            </div>
+                                    <span class="form-error-msg">{{errorMessage}}</span>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
+                                        style="width: 6rem">
+                                        <span>Close</span>
+                                    </button>
+                                    <button type="submit" class="btn btn-primary rounded-pill"
+                                        [disabled]="newUserForm.invalid" style="width: 6rem">
+                                        Save
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -151,7 +142,8 @@
                                     <td class="edit-del-button">
                                         <div>
                                             <i class="ri-edit-2-fill icon-size" data-bs-toggle="modal"
-                                                data-bs-target="#verticalycentered1" (click)="updateUser(user.email)"></i>
+                                                data-bs-target="#verticalycentered1"
+                                                (click)="updateUser(user.email)"></i>
                                         </div>
                                     </td>
                                 </tr>
@@ -221,7 +213,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputName5" class="form-label">Department <span class="mandatory-fields">*</span>
+                                <label for="inputName5" class="form-label">Department <span
+                                        class="mandatory-fields">*</span>
                                     <span *ngIf="f.department.errors?.['required'] && f.department.touched"
                                         class="form-error-msg">&nbsp;&nbsp;Required</span>
                                 </label>
@@ -241,10 +234,12 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal" style="width: 6rem;">Close</button>
-                    <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid" style="width: 6rem;">Save</button>
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
+                        style="width: 6rem;">Close</button>
+                    <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid"
+                        style="width: 6rem;">Save</button>
                 </div>
             </form>
         </div>
     </div>
-</div> 
+</div>
