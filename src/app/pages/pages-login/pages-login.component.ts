@@ -17,8 +17,8 @@ export class PagesLoginComponent implements OnInit {
   loading!: boolean;
   userLoginInForm!: FormGroup;
   //Storing User Data
-  userDataArray:any;
-  userData:any;
+  userDataArray: any;
+  userData: any;
 
   constructor(
     private router: Router,
@@ -42,17 +42,15 @@ export class PagesLoginComponent implements OnInit {
     if (this.userLoginInForm.valid) {
       this.cognitoService.signIn(this.user).then(() => {
         alert('Cognito login successful')
-        console.log("Email: ",this.user.email)
-        this.userService.getUserbyEmail(this.user.email).pipe().pipe(first()).subscribe((result:any)=>{
-          console.log("Loggined user Details by email ID: ",result[0])
+        console.log("Email: ", this.user.email)
+        this.userService.getUserbyEmail(this.user.email).pipe().pipe(first()).subscribe((result: any) => {
+          console.log("Loggined user Details by email ID: ", result[0])
           //Storing User Data in Local Storage
           //this.userDataArray  = result[0];
-          
-          
           //console.log("User Data: ",this.userData)
-          localStorage.setItem('userData',JSON.stringify(result[0]))
+          localStorage.setItem('userData', JSON.stringify(result[0]))
+          this.router.navigate(['/dashboard']);
         })
-        this.router.navigate(['/dashboard']);
       }).catch(() => {
         alert('Login falied, Check your email and password')
       })

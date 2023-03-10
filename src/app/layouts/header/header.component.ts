@@ -12,19 +12,21 @@ import { User } from 'src/app/models/datatypes';
 })
 export class HeaderComponent implements OnInit {
   //@Input() logginedUserData:any
-  logginedUserData!:User;
+  logginedUserData!: User;
   constructor(
     private router: Router,
     private userService: UserServiceService,
     private cognitoService: CognitoService,
     @Inject(DOCUMENT) private document: Document
-    ) { }
+  ) { }
 
-  ngOnInit(): void {
-  this.getLoginedUserdata()
+  async ngOnInit(): Promise<void> {
+    if (await this.cognitoService.isAuthenticated()) {
+      console.log('from Header')
+      this.getLoginedUserdata()
+    }
   }
-  sidebarToggle()
-  {
+  sidebarToggle() {
     //toggle sidebar function
     this.document.body.classList.toggle('toggle-sidebar');
   }
@@ -35,13 +37,13 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(["/pages-login"])
     })
   }
-  
-  getLoginedUserdata(){
+
+  getLoginedUserdata() {
     const userEmail = JSON.parse(localStorage.getItem('userData') || '{}')['email']
-    this.userService.getUserbyEmail(userEmail).subscribe((result:any)=>{
+    this.userService.getUserbyEmail(userEmail).subscribe((result: any) => {
       this.logginedUserData = result[0];
-      console.log("this.logginedUserData: ",this.logginedUserData)
+      console.log("this.logginedUserData: ", this.logginedUserData)
     })
   }
-  
+
 }
