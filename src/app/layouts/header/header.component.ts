@@ -36,9 +36,9 @@ export class HeaderComponent implements OnInit {
     })
   }
   
-  getLoginedUserdata(){
+getLoginedUserdata(){
     const userEmail = JSON.parse(localStorage.getItem('userData') || '{}')['email']
-    this.userService.getUserbyEmail(userEmail).subscribe((result:any)=>{
+   this.userService.getUserbyEmail(userEmail).subscribe((result:any)=>{
       this.logginedUserData = result[0];
       console.log("this.logginedUserData: ",this.logginedUserData)
     })

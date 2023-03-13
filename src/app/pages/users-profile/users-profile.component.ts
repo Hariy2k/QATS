@@ -12,9 +12,9 @@ export class UsersProfileComponent implements OnInit {
   constructor(private userService: UserServiceService) { }
 
   ngOnInit(): void {
-    this.getUserProfileDetails()
+     this.getUserProfileDetails()
   }
-  getUserProfileDetails(){
+  async getUserProfileDetails(){
     const userEmail = JSON.parse(localStorage.getItem('userData') || '{}')['email']
     this.userService.getUserbyEmail(userEmail).subscribe((result:any)=>{
       this.UserDetails = result[0];
