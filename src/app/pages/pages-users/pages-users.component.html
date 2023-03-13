@@ -20,6 +20,8 @@
                         <form [formGroup]="newUserForm" (ngSubmit)="submit()">
                             <div class="modal-header">
                                 <h5 class="modal-title">Create New User </h5>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">User Already Exist!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -101,8 +103,9 @@
                             <div class="modal-footer"
                                 style="display: flex;flex-direction: row;justify-content: space-between;">
                                 <div>
-<<<<<<< HEAD
-                                <span class="form-error-msg">{{errorMessage}}</span>
+                                <!-- <span class="form-error-msg">{{errorMessage}}</span> -->
+                                <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage==''">{{errorMessage}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div> -->
+
                               </div>
                               <div>
                                 <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
@@ -114,20 +117,6 @@
                                     Save
                                 </button>
                             </div>
-=======
-                                    <span class="form-error-msg">{{errorMessage}}</span>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
-                                        style="width: 6rem">
-                                        <span>Close</span>
-                                    </button>
-                                    <button type="submit" class="btn btn-primary rounded-pill"
-                                        [disabled]="newUserForm.invalid" style="width: 6rem">
-                                        Save
-                                    </button>
-                                </div>
->>>>>>> 28f25ff330063e711ca8aee578895c7a82291fd8
                             </div>
                         </form>
                     </div>
@@ -175,7 +164,7 @@
 <div class="modal fade" id="verticalycentered1" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form [formGroup]="newUserForm">
+            <form [formGroup]="newUserForm" (ngSubmit)="updateDateUser()">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -250,9 +239,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal"
-                        style="width: 6rem;">Close</button>
+                        style="width: 6rem;" >Close</button>
                     <button type="submit" class="btn btn-primary rounded-pill" [disabled]="newUserForm.invalid"
-                        style="width: 6rem;">Save</button>
+                        style="width: 6rem;" (click)="getallUsers()">Save</button>
                 </div>
             </form>
         </div>

@@ -25,11 +25,11 @@ export class UserServiceService {
     return this.http.post(`${userServiceURL}`, payload, this.httpOptions);
   }
 
-  updateUser(payload: any, company: string, uniqueId: string) {
-    payload.company = company
-    payload.uniqueId = uniqueId
-    var userServiceURL = environment.usersService_addNewUserURL;
-    return this.http.post(`${userServiceURL}`, payload, this.httpOptions);
+  updateUser(payload: any, company_name: string, emp_id: string) {
+    payload.company_name = company_name
+    payload.emp_id = emp_id
+    var userServiceURL = environment.usersService_updateUserURL;
+    return this.http.put(`${userServiceURL}`, payload, this.httpOptions);
   }
 
   getUserbyEmail(userEmail: string): any {

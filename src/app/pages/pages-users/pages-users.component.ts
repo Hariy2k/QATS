@@ -64,14 +64,6 @@ export class PagesUsersComponent implements OnInit {
     this.newUserForm.reset()
   }
   async updateUser(value: any) {
-    // const payload:any = {
-    //   name:this.newUserForm.value.name,
-    //   email:this.newUserForm.value.email,
-    //   department: this.newUserForm.value.department,
-    //   designation:this.newUserForm.value.designation,
-    //   phone:this.newUserForm.value.phone
-    // }
-    // const emp_id:any = this.newUserForm.value.emp_id;
     console.log("Value of Email: ", value)
     await this.userService.getUserbyEmail(value).subscribe((result: any) => {
       this.updateUserData = result[0];
@@ -96,5 +88,17 @@ export class PagesUsersComponent implements OnInit {
         this.loading = false;
       });
   }
-
+  updateDateUser(){
+    const payload:any = {
+      name:this.newUserForm.value.name,
+      email:this.newUserForm.value.email,
+      department: this.newUserForm.value.department,
+      designation:this.newUserForm.value.designation,
+      phone:this.newUserForm.value.phone
+    }
+    const emp_id:any = this.newUserForm.value.emp_id;
+    this.userService.updateUser(payload,'Quad',emp_id).subscribe((data:any)=>{
+      console.log("Result for Update: ",data)
+    })
+  }
 }

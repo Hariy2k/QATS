@@ -37,17 +37,10 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(["/pages-login"])
     })
   }
-<<<<<<< HEAD
-  
-getLoginedUserdata(){
-    const userEmail = JSON.parse(localStorage.getItem('userData') || '{}')['email']
-   this.userService.getUserbyEmail(userEmail).subscribe((result:any)=>{
-=======
 
   getLoginedUserdata() {
     const userEmail = JSON.parse(localStorage.getItem('userData') || '{}')['email']
     this.userService.getUserbyEmail(userEmail).subscribe((result: any) => {
->>>>>>> 28f25ff330063e711ca8aee578895c7a82291fd8
       this.logginedUserData = result[0];
       console.log("this.logginedUserData: ", this.logginedUserData)
     })
